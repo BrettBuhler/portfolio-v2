@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
+import TextWave from './TextWave'
 
 const Hero = () => {
 
@@ -20,23 +21,18 @@ const Hero = () => {
     }, [index])
 
     const heroStyles = {
-        background: '#333',
-        color: '#fff',
-        height: '100vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         textAlign: 'center',
+        background: '#333',
+        color: '#fff',
+        height: '100vh',
         fontSize: '3rem',
     }
 
     return (
-        <div style={heroStyles}>
-            <h1>Brett Buhler</h1>
-            <div className="text-transition">
-                <span className="text" key={text}>{text}</span>
-            </div>
-        </div>
+      <TextWave />
     )
 }
 

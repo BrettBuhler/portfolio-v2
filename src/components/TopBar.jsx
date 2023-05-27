@@ -13,7 +13,7 @@ const TopBar = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [])
 
   const topBarStyles = {
     position: 'fixed',
@@ -28,7 +28,7 @@ const TopBar = () => {
     transform: showTopBar ? 'translateY(0)' : 'translateY(-100%)',
     transition: 'background 0.3s ease, transform 0.3s ease',
     zIndex: 999,
-  };
+  }
 
   return (
     <div style={topBarStyles}>
