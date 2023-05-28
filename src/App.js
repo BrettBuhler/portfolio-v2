@@ -1,6 +1,8 @@
 import Projects from './components/Projects'
 import TopBar from './components/TopBar'
 import Hero from './components/Hero'
+import ContactForm from './components/ContactForm'
+import About from './components/About'
 
 function App() {
   return (
@@ -8,6 +10,7 @@ function App() {
       <TopBar />
       <Hero />
       <Projects />
+      <ContactForm />
     </div>
   )
 }
