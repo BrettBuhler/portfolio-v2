@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import '../styles/ContactForm.css'
 
-const ContactForm = ({ openForm }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const ContactForm = ({ openForm, setOpenForm }) => {
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -19,16 +20,17 @@ const ContactForm = ({ openForm }) => {
   };
 
   const handleOpenPopup = () => {
-    setIsOpen(true);
+    setOpenForm(true)
   };
 
   const handleClosePopup = () => {
-    setIsOpen(false);
     setIsSubmitted(false);
     // Reset form fields
     setName('');
     setEmail('');
     setMessage('');
+    console.log(setOpenForm)
+    setOpenForm(false)
   };
 
   const handleOverlayClick = (e) => {
@@ -39,7 +41,7 @@ const ContactForm = ({ openForm }) => {
 
   return (
     <>
-      {isOpen && (
+      {openForm && (
         <div className="popup-overlay" onClick={handleOverlayClick}>
           <div className="popup-container">
             {!isSubmitted ? (
@@ -77,8 +79,8 @@ const ContactForm = ({ openForm }) => {
               </form>
             ) : (
               <div className="confirmation-screen">
-                <h2>Thank you for your submission!</h2>
-                <p>We will get back to you soon.</p>
+                <h2>Thank you for reaching out!</h2>
+                <p>I'll get back to you as soon as possible</p>
                 <button
                   onClick={handleClosePopup}
                   className="form-button form-button-close"

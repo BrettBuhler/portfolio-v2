@@ -1,0 +1,69 @@
+.tech-stack-container {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+  border-bottom: 2px solid white;
+}
+
+.tech-stack {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding-bottom: 8px; /* Add some bottom padding to make room for the scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #8F00FF #00003D;
+}
+
+.tech-stack::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #00003D;
+}
+
+.tech-stack::-webkit-scrollbar-thumb {
+  background-color: #8F00FF;
+  border-radius: 4px;
+}
+
+.tech-stack::-webkit-scrollbar-thumb:hover {
+  background-color: #A530FF;
+}
+
+.tech-stack::-webkit-scrollbar-thumb:active {
+  background-color: #7100B3;
+}
+
+.tech-stack-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Adjust alignment as needed */
+  width: max-content;
+  margin: 0 auto;
+  padding-left: 10px; /* Add left padding to shift the first item into view */
+  padding-right: 20px;
+}
+
+.tech-item-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #00003dc9;
+}
+
+.tech-item {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  border: 2px solid white;
+}
+
+.tech-item-name {
+  color: white;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}

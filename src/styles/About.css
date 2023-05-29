@@ -1,0 +1,71 @@
+.about-section {
+    background-size: cover;
+    color: white;
+    height: 100vh;
+    position: relative;
+    border-top: 2px solid white;
+    margin-bottom: 0;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .bio {
+    margin-bottom: 2rem;
+  }
+  
+  .bioh3 {
+    font-size: 2.5rem;
+    color: white;
+    font: 700 normal 2.5em 'tahoma';
+    text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+  }
+  
+  .biop {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font: 'tahoma';
+  }
+  
+  .tech-biop {
+    font-size: 1.2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+  
+    .bioh3 {
+      font-size: 2rem;
+    }
+  
+    .biop {
+      font-size: 1.3rem;
+    }
+  
+    .tech-biop {
+      font-size: 1.1rem;
+    }
+  }
+  
+  .TechStackDiv {
+    border-top: 2px solid white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }

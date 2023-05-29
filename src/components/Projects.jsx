@@ -1,10 +1,15 @@
 import { useState } from 'react'
 import projectArray from '../services/projects'
+import '../styles/Projects.css'
+import projectsBackground from '../images/wallpaperflare-cropped.jpg'
 
 const Projects = ({}) => {
     return (
-        <div className='projectContainer'>
-            <h2>Responsive Flip Cards</h2>
+        <div className='projectContainer' id='projects' style={{background: `url(${projectsBackground})`}}>
+            <div className='project-text-container'>
+            <h2 className='project-h2'>Projects</h2>
+            <p className='project-p'>Hover over (tap on mobile) a project to see a brief description, link to the live site, link to the GitHub repo, and a link to a video demo. If you want to learn more about a project, follow the GitHub link and you will find a detailed description in the project's read me.</p>
+            </div>
             {projectArray.map((project, i) => 
             <div className="boxesContainer" key={project.name + i.toString()}>
                 <div className="cardBox">

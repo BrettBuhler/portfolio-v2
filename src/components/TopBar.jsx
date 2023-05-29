@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import ContactForm from './ContactForm'
 import gitHub from '../images/icons8-github-48.png'
 import linkedIn from '../images/icons8-linkedin-40.png'
+import '../styles/TopBar.css'
+import topBarBackground from '../images/laser-lights-light-beams-long-exposure-rays-reflection-3840x2160-4628.jpg'
 
-const TopBar = () => {
+const TopBar = ({ setOpenForm, openForm }) => {
   const [showTopBar, setShowTopBar] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [showContactForm, setShowContactForm] = useState(false);
@@ -22,12 +24,49 @@ const TopBar = () => {
 
   const handleSectionClick = (section) => {
     setActiveSection(section);
-    // Scroll to the corresponding section on the page
-    // You can implement the scrolling functionality here
+    const scrollTo = document.getElementById(section);
+    if (scrollTo) {
+      const scrollOptions = {
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest',
+      };
+  
+      const scrollContainer = document.documentElement || document.body;
+      const startPosition = scrollContainer.scrollTop;
+      const targetPosition = scrollTo.offsetTop;
+      const distance = targetPosition - startPosition;
+      const duration = 800
+  
+      let startTimestamp = null;
+  
+      const scrollStep = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = timestamp - startTimestamp;
+  
+        const easeInOutQuad = (t) => {
+          t /= duration / 2;
+          if (t < 1) return (distance / 2) * t * t + startPosition
+          t--;
+          return (-distance / 2) * (t * (t - 2) - 1) + startPosition
+        };
+  
+        const scrollToPosition = easeInOutQuad(progress)
+  
+        scrollContainer.scrollTop = scrollToPosition
+  
+        if (progress < duration) {
+          window.requestAnimationFrame(scrollStep)
+        }
+      };
+  
+      window.requestAnimationFrame(scrollStep)
+    }
   };
 
   const handleOpenContactForm = () => {
     setShowContactForm(true)
+    setOpenForm(true)
   }
 
   const topBarStyles = {
@@ -38,8 +77,8 @@ const TopBar = () => {
     height: '50px',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between', // Updated to evenly space items
-    background: showTopBar ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
+    justifyContent: 'space-between',
+    background: showTopBar ? 'rgba(0, 0, 0, 0.95)' : 'transparent',
     borderBottom: showTopBar ? '2px solid #ffffff' : 'none',
     transition: 'background 0.3s ease, border 0.3s ease',
     zIndex: 999,
@@ -58,9 +97,10 @@ const TopBar = () => {
     color: '#ffffff',
     marginRight: '10px',
     marginLeft: '10px',
-    textDecoration: 'none', // Remove default underline
-    transition: 'transform 0.3s ease', // Added transition for transform effect
+    textDecoration: 'none',
+    transition: 'transform 0.3s ease', 
     border: '2px solid white',
+    borderRadius: '5px',
     background: 'black'
   };
   
@@ -76,6 +116,7 @@ const TopBar = () => {
     marginRight: '20px',
     border: '2px solid white',
     background: '#006DFF',
+    borderRadius: '5px',
   };
 
   return (
@@ -83,7 +124,7 @@ const TopBar = () => {
       <div style={topBarStyles}>
         <div>
           <button
-            style={buttonStyles}
+            style={{...buttonStyles, ...buttonHoverStyles}}
             onClick={() => handleSectionClick('home')}
           >
             Home
@@ -120,7 +161,7 @@ const TopBar = () => {
           </a>
         </div>
       </div>
-      {showContactForm && <ContactForm openForm={handleOpenContactForm}/>}
+      {showContactForm && <ContactForm openForm={openForm} setOpenForm={setOpenForm}/>}
 </div>
   )}
 
