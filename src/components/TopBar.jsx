@@ -3,7 +3,6 @@ import ContactForm from './ContactForm'
 import gitHub from '../images/icons8-github-48.png'
 import linkedIn from '../images/icons8-linkedin-40.png'
 import '../styles/TopBar.css'
-import topBarBackground from '../images/laser-lights-light-beams-long-exposure-rays-reflection-3840x2160-4628.jpg'
 
 const TopBar = ({ setOpenForm, openForm }) => {
   const [showTopBar, setShowTopBar] = useState(false);
@@ -22,8 +21,40 @@ const TopBar = ({ setOpenForm, openForm }) => {
     };
   }, []);
 
+  useEffect(() => {
+    // Add event listener when the component mounts
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    const homeElement = document.getElementById('home');
+    const aboutElement = document.getElementById('about');
+    const projectsElement = document.getElementById('projects');
+
+    const scrollPosition = window.scrollY;
+
+    const homeOffsetTop = homeElement.offsetTop;
+    const aboutOffsetTop = aboutElement.offsetTop;
+    const projectsOffsetTop = projectsElement.offsetTop;
+
+    // Define the threshold value where you want to consider the user as in a section
+    const threshold = 100; // Change this value as per your requirement
+
+    if (scrollPosition < aboutOffsetTop - threshold) {
+      setActiveSection('home');
+    } else if (scrollPosition < projectsOffsetTop - threshold) {
+      setActiveSection('about');
+    } else {
+      setActiveSection('projects');
+    }
+  };
+
   const handleSectionClick = (section) => {
-    setActiveSection(section);
     const scrollTo = document.getElementById(section);
     if (scrollTo) {
       const scrollOptions = {
@@ -89,20 +120,6 @@ const TopBar = ({ setOpenForm, openForm }) => {
     height: '100%',
     background: '#ffffff',
   };
-
-  const buttonStyles = {
-    padding: '0 10px',
-    height: '30px',
-    cursor: 'pointer',
-    color: '#ffffff',
-    marginRight: '10px',
-    marginLeft: '10px',
-    textDecoration: 'none',
-    transition: 'transform 0.3s ease', 
-    border: '2px solid white',
-    borderRadius: '5px',
-    background: 'black'
-  };
   
   const buttonHoverStyles = {
     transform: 'scale(1.1)',
@@ -124,28 +141,28 @@ const TopBar = ({ setOpenForm, openForm }) => {
       <div style={topBarStyles}>
         <div>
           <button
-            style={{...buttonStyles, ...buttonHoverStyles}}
+            className={activeSection === 'home' ? 'button active' : 'button'}
             onClick={() => handleSectionClick('home')}
           >
             Home
             {activeSection === 'home' && <span style={indicatorStyles}></span>}
           </button>
           <button
-            style={buttonStyles}
             onClick={() => handleSectionClick('about')}
+            className={activeSection === 'about' ? 'button active' : 'button'}
           >
             About
             {activeSection === 'about' && <span style={indicatorStyles}></span>}
           </button>
           <button
-            style={buttonStyles}
             onClick={() => handleSectionClick('projects')}
+            className={activeSection === 'projects' ? 'button active' : 'button'}
           >
             Projects
             {activeSection === 'projects' && <span style={indicatorStyles}></span>}
           </button>
           <button
-            style={buttonStyles}
+            className='button'
             onClick={() => handleOpenContactForm()}
           >
             Contact

@@ -15,7 +15,7 @@ class Tech {
     }
 }
 
-const react = new Tech ('React', reactIcon)
+const react = new Tech ('React.js', reactIcon)
 const javaScript = new Tech ('JavaScript', javaScriptIcon)
 const typeScript = new Tech ('TypeScript', typeScriptIcon)
 const express = new Tech ('Express.js', expressIcon)
