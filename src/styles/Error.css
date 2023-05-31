@@ -1,0 +1,41 @@
+.error-h4{
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    font: 700 normal 2em 'tahoma';
+}
+.error-popup-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .error-popup {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1001;
+  }
+  
+  .error-popup h4 {
+    margin-top: 0;
+  }
+  
+  .error-popup p {
+    margin: 10px 0;
+  }
+  
+  .error-popup button {
+    margin-top: 20px;
+  }

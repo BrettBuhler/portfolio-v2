@@ -1,35 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import ContactForm from './ContactForm'
 import gitHub from '../images/icons8-github-48.png'
 import linkedIn from '../images/icons8-linkedin-40.png'
 import '../styles/TopBar.css'
 
 const TopBar = ({ setOpenForm, openForm }) => {
-  const [showTopBar, setShowTopBar] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
-  const [showContactForm, setShowContactForm] = useState(false);
+  const [showTopBar, setShowTopBar] = useState(false)
+  const [activeSection, setActiveSection] = useState('home')
+  const [showContactForm, setShowContactForm] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      setShowTopBar(scrollTop > 0);
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      setShowTopBar(scrollTop > 0)
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll)
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   useEffect(() => {
-    // Add event listener when the component mounts
-    window.addEventListener('scroll', handleScroll);
-
-    // Clean up the event listener when the component unmounts
+    window.addEventListener('scroll', handleScroll)
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const handleScroll = () => {
     const homeElement = document.getElementById('home');
@@ -115,22 +112,9 @@ const TopBar = ({ setOpenForm, openForm }) => {
     zIndex: 999,
   };
 
-  const indicatorStyles = {
-    width: '4px',
-    height: '100%',
-    background: '#ffffff',
-  };
-  
-  const buttonHoverStyles = {
-    transform: 'scale(1.1)',
-    color: '#000000',
-    background: 'white',
-  };
-
   const iconStyles = {
-    hight: '30px',
+    height: '30px',
     width: '30px',
-    marginRight: '20px',
     border: '2px solid white',
     background: '#006DFF',
     borderRadius: '5px',
@@ -138,43 +122,39 @@ const TopBar = ({ setOpenForm, openForm }) => {
 
   return (
     <div>
-      <div style={topBarStyles}>
-        <div>
+      <div style={topBarStyles} className='topBar'>
+        <div className='topbar-button-container'>
           <button
-            className={activeSection === 'home' ? 'button active' : 'button'}
+            className={activeSection === 'home' ? 'button active item' : 'button item'}
             onClick={() => handleSectionClick('home')}
           >
             Home
-            {activeSection === 'home' && <span style={indicatorStyles}></span>}
           </button>
           <button
             onClick={() => handleSectionClick('about')}
-            className={activeSection === 'about' ? 'button active' : 'button'}
+            className={activeSection === 'about' ? 'button active item' : 'button item'}
           >
             About
-            {activeSection === 'about' && <span style={indicatorStyles}></span>}
           </button>
           <button
             onClick={() => handleSectionClick('projects')}
-            className={activeSection === 'projects' ? 'button active' : 'button'}
+            className={activeSection === 'projects' ? 'button active item' : 'button item'}
           >
             Projects
-            {activeSection === 'projects' && <span style={indicatorStyles}></span>}
           </button>
           <button
-            className='button'
+            className='button item'
             onClick={() => handleOpenContactForm()}
           >
             Contact
-            {activeSection === 'contact' && <span style={indicatorStyles}></span>}
           </button>
         </div>
-        <div>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-            <img src={gitHub} alt="GitHub" style={iconStyles} />
+        <div className='topbar-link-container'>
+          <a href="https://github.com/BrettBuhler" target="_blank" rel="noopener noreferrer">
+            <img src={gitHub} alt="GitHub" className='topbar-icon item'/>
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src={linkedIn} alt="LinkedIn" style={iconStyles} />
+          <a href="https://www.linkedin.com/in/brett-buhler-a7522a1b6/" target="_blank" rel="noopener noreferrer">
+            <img src={linkedIn} alt="LinkedIn" className='topbar-icon item'/>
           </a>
         </div>
       </div>

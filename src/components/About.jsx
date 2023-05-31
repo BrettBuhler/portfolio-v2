@@ -9,7 +9,7 @@ const About = () => {
       <div className="container">
         <div className="about-content">
           <div className="bio">
-            <h3 className="bioh3">Hi, I'm Brett Buhler</h3>
+            <h3 className="bioh3">I'm Brett Buhler</h3>
             <p className='biop'>
             I'm passionate about AI and love creating intelligent web solutions. With expertise in React.js, Node.js, and Express.js, I build seamless user interfaces and scalable back-end systems. I also integrate AI functionalities, like machine learning and natural language processing, to empower businesses. Let's collaborate and create something exceptional together!
             </p>

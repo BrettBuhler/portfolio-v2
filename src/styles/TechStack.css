@@ -1,6 +1,7 @@
 .tech-stack-container {
   position: relative;
   width: 100vw;
+  height: 100%;
   overflow: hidden;
   border-bottom: 2px solid white;
 }
@@ -55,8 +56,8 @@
 }
 
 .tech-item {
-  width: 100px;
-  height: 100px;
+  width: 95px;
+  height: 95px;
   border-radius: 5px;
   border: 2px solid white;
 }
@@ -67,3 +68,4 @@
   text-align: center;
   font-weight: bold;
 }
+

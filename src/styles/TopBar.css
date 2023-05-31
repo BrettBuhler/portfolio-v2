@@ -31,6 +31,15 @@
   transition: left 0.3s ease, background-color 0.3s ease;
 }
 
+.topbar-icon{
+  height: 30px;
+  width: 30px;
+  border: 2px solid white;
+  background: #006DFF;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
 .button:hover:before {
   left: 0;
   background-color: white;
@@ -40,3 +49,44 @@
   transform: scale(1.1);
   color:black
 }
+
+@media (max-width: 470px) {
+  .topBar .item {
+    transform: scale(0.8);
+    margin: 0;
+  }
+  .button{
+    margin: 0;
+  }
+
+  .topbar-icon{
+    margin-right: 5px;
+  }
+}
+
+.topbar-icon:hover{
+  transform: scale(1.1);
+}
+
+.topbar-icon:hover{
+  transform: scale(1.1);
+}
+@media (max-width: 340px) {
+  .button{
+    padding: 5px;
+  }
+
+  .topbar-button-container{
+    display: block;
+    padding: 0;
+  }
+  
+  .topbar-icon{
+    margin-right: 5px;
+  }
+  .topbar-icon:hover{
+    transform: none;
+  }
+}
+
+

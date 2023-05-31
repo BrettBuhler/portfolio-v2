@@ -8,7 +8,7 @@ const Projects = ({}) => {
         <div className='projectContainer' id='projects' style={{background: `url(${projectsBackground})`, backgroundSize: 'cover'}}>
             <div className='project-text-container'>
             <h2 className='project-h2'>Projects</h2>
-            <p className='project-p'>Hover over (tap on mobile) a project to see a brief description, link to the live site, link to the GitHub repo, and a link to a video demo. If you want to learn more about a project, follow the GitHub link and you will find a detailed description in the project's read me.</p>
+            <p className='project-p'>Hover over each project to reveal a brief description, a link to the live site, a GitHub repository link, and even a video demo! For more details about a project, click on the GitHub link to access the comprehensive description in the project's README file. Enjoy exploring!</p>
             </div>
             <div className='projects-holder'>
             {projectArray.map((project, i) => 
@@ -29,7 +29,7 @@ const Projects = ({}) => {
                         <div className='button-container'>
                             <a href={project.liveLink} target='_blank' className='project-button'>Live Site</a>
                             <a href={project.gitHubLink} target='_blank' className='project-button'>GitHub</a>
-                            <a href={project.gitHubLink} target='_blank' className='project-button'>Demo</a>
+                            <a href={project.demoLink} target='_blank' className='project-button'>Demo</a>
                         </div>
                     </div>
                     </div>

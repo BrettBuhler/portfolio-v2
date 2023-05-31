@@ -1,22 +1,17 @@
-/* Main container */
 .projectContainer {
-    /* Add your styles here */
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 0;
     min-height: 100vh;
+    padding-bottom: 20px;
   }
-  
-  /* Container for the top text */
+
   .project-text-container {
-    /* Add your styles here */
     margin-bottom: 20px;
   }
   
-  /* Section title */
   .project-h2 {
-    /* Add your styles here */
     padding-top: 10vh;
     font-weight: bold;
     color: white;
@@ -133,21 +128,21 @@
 
   .button-container {
     position: absolute;
-    bottom: 10px; /* Adjust as needed */
+    bottom: 10px;
     width: 100%;
     display: flex;
-    justify-content: center; /* Center the buttons */
-    gap: 10px; /* Add some spacing between the buttons */
+    justify-content: center;
+    gap: 10px; 
   }
   
   .project-button {
-    padding: 8px 16px; /* Adjust the padding as needed */
+    padding: 8px 16px;
     background-color: black;
     color: white;
     border: 2px solid white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 14px; /* Adjust the font size as needed */
+    font-size: 14px;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, background-color 0.3s ease;
@@ -173,4 +168,5 @@
   .project-button:hover {
     transform: scale(1.1);
     color: black;
+    font-weight: bold;
   }
