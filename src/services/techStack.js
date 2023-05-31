@@ -24,6 +24,7 @@ const node = new Tech ('Node.js', nodeIcon)
 const html = new Tech ('HTML', htmlIcon)
 const css = new Tech ('CSS', cssIcon)
 const gCP = new Tech ('Google Cloud', googleCloudPlatformIcon)
+
 const techArray = [javaScript, typeScript, node, react, express, mongoDB, html, css, gCP]
 
 export default techArray

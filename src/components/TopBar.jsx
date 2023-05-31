@@ -3,11 +3,14 @@ import ContactForm from './ContactForm'
 import gitHub from '../images/icons8-github-48.png'
 import linkedIn from '../images/icons8-linkedin-40.png'
 import '../styles/TopBar.css'
+import ReactGA from 'react-ga'
 
 const TopBar = ({ setOpenForm, openForm }) => {
   const [showTopBar, setShowTopBar] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const [showContactForm, setShowContactForm] = useState(false)
+
+  ReactGA.pageview(window.location.pathname)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,18 +32,15 @@ const TopBar = ({ setOpenForm, openForm }) => {
   }, [])
 
   const handleScroll = () => {
-    const homeElement = document.getElementById('home');
     const aboutElement = document.getElementById('about');
     const projectsElement = document.getElementById('projects');
 
     const scrollPosition = window.scrollY;
 
-    const homeOffsetTop = homeElement.offsetTop;
     const aboutOffsetTop = aboutElement.offsetTop;
     const projectsOffsetTop = projectsElement.offsetTop;
 
-    // Define the threshold value where you want to consider the user as in a section
-    const threshold = 100; // Change this value as per your requirement
+    const threshold = 100;
 
     if (scrollPosition < aboutOffsetTop - threshold) {
       setActiveSection('home');
@@ -54,12 +54,6 @@ const TopBar = ({ setOpenForm, openForm }) => {
   const handleSectionClick = (section) => {
     const scrollTo = document.getElementById(section);
     if (scrollTo) {
-      const scrollOptions = {
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'nearest',
-      };
-  
       const scrollContainer = document.documentElement || document.body;
       const startPosition = scrollContainer.scrollTop;
       const targetPosition = scrollTo.offsetTop;
@@ -110,14 +104,6 @@ const TopBar = ({ setOpenForm, openForm }) => {
     borderBottom: showTopBar ? '2px solid #ffffff' : 'none',
     transition: 'background 0.3s ease, border 0.3s ease',
     zIndex: 999,
-  };
-
-  const iconStyles = {
-    height: '30px',
-    width: '30px',
-    border: '2px solid white',
-    background: '#006DFF',
-    borderRadius: '5px',
   };
 
   return (
