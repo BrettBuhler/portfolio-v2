@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Portfolio-v2
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Portfolio-v2, my personal portfolio website showcasing my projects and skills. This version of my portfolio site is designed with a dynamic list pattern, allowing the tech stack and projects components to grow without causing layout issues.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Introduction](#introduction)
+- [Demo](#demo)
+- [Technologies Used](#technologies-used)
+- [Improvement Over the First Portfolio](#improvement-over-the-first-portfolio)
+- [Hosting and CI/CD Pipeline](#hosting-and-cicd-pipeline)
+- [Google Analytics Integration](#google-analytics-integration)
+- [Getting Started](#getting-started)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Introduction
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This portfolio site serves as a showcase of my projects, skills, and experiences. It is built using JavaScript, HTML, CSS, Node.js, and React. The site follows a dynamic list design pattern, ensuring that the tech stack and projects components can expand seamlessly without affecting the overall layout.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Demo
 
-### `npm test`
+You can access the live version of my portfolio site at www.brettbuhler.com
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can view a brief video demo at https://www.youtube.com/watch?v=QoQFUFq5vn0
 
-### `npm run build`
+## Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The following technologies were used in the development of this portfolio site:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- JavaScript
+- HTML
+- CSS
+- Node.js
+- React
+- Google Cloud Platform
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Improvement Over the First Portfolio
 
-### `npm run eject`
+If you want to take a look at my first portfolio site, you can find it at https://brettbuhler.github.io/portfolio/. Comparing it with Portfolio-v2, you'll notice significant improvements in terms of design, functionality, and overall user experience. I've incorporated the dynamic list design pattern in this version to accommodate a growing tech stack and an expanding list of projects without any layout issues.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Hosting and CI/CD Pipeline
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Portfolio-v2 is hosted on Google Cloud Platform (GCP) and utilizes Cloud Build for a robust continuous integration and continuous deployment (CI/CD) pipeline. This allows for efficient development and deployment workflows, ensuring that updates to the portfolio site are automatically built and deployed to the hosting environment.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Google Analytics Integration
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To gain insights into user behavior and track important metrics, I have integrated Google Analytics 4 into this portfolio site. This helps me analyze visitor traffic, engagement, and other valuable statistics, enabling me to make data-driven decisions to improve the user experience.
 
-## Learn More
+## Getting Started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To run this portfolio site locally, follow these steps:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone this repository: `git clone https://github.com/your-username/portfolio-v2.git`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm start`
 
-### Code Splitting
+You should now be able to access the portfolio site at `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contributing
 
-### Analyzing the Bundle Size
+I appreciate any contributions to enhance the portfolio site. If you have any suggestions, improvements, or bug fixes, feel free to open an issue or submit a pull request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## License
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the [MIT License](LICENSE). Feel free to modify and distribute this code for personal or commercial purposes.
