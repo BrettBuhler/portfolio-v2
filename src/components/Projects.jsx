@@ -17,7 +17,7 @@ const Projects = ({}) => {
                     <div className="front" style={{
                         background: `url(${project.background})`,
                         backgroundSize: 'cover',
-                        backgroundPosition: 'center'
+                        backgroundPosition: 'center',
                     }}>
                          
                         <strong className='flipIcon'>&#x21bb;</strong>
