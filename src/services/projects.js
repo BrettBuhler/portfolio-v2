@@ -5,6 +5,7 @@ import wordle from '../images/wordle.PNG'
 import codeWarsBackground from '../images/codeWars.PNG'
 import portfolioBackground from '../images/portfolioHome.PNG'
 import flashStudyBackground from '../images/fs6.PNG'
+import myGptBackground from '../images/myGpt.PNG'
 
 class Project  {
     static colorIndex = 0
@@ -40,6 +41,7 @@ const wordlePlus = new Project ('Wordle Plus', 'Wordle Plus is a captivating gam
 const codeWars = new Project ('Code Wars', 'I enhance my programming skills through Code Wars challenges, mastering data structures and algorithms. Using GitHub for version control, I track progress and rank in the top 1% on the leaderboards, validating my commitment to improvement.', 'Technology: JavaScript, TypeScript, Python, Git', 'https://www.codewars.com/users/BrettBuhler', 'https://github.com/BrettBuhler/Code-Wars', 'https://www.youtube.com/watch?v=ZJcchjapw4g', codeWarsBackground)
 const portfolio = new Project('Portfolio', 'Thank you for visiting my portfolio! I appreciate your interest. Please feel free to reach out to me by clicking the contact button in the top bar. I look forward to connecting with you!', 'Technology: React.js JavaScript, Email.js, Node.js, Google Cloud Platform, CI/CD pipeline', 'https://www.brettbuhler.com','https://github.com/BrettBuhler/portfolio-v2', 'https://www.youtube.com/watch?v=QoQFUFq5vn0', portfolioBackground)
 const flashStudy = new Project('Flash Study', "Harness OpenAI's cutting-edge technology to generate personalized flashcards on any topic, at any skill level. From exams to language learning and complex subjects, our platform has you covered. Experience the convenience of Flash Study's tailored flashcards. Input articles, textbooks, or your own notes, and watch as our AI extracts key information, creating targeted flashcards in no time.", 'Technology: TypeScript, JavaScript, Node.js, Express, React, MongoDB, Stripe, Passport, GCP, CI/CD pipeline', 'https://flash-study.uc.r.appspot.com/', 'https://github.com/BrettBuhler/flash-study', 'https://www.youtube.com/watch?v=Z50n7F_hAdc', flashStudyBackground)
-const projectArray = [flashStudy, jobHunt, openingMaster, reactDash, codeWars, portfolio]
+const myGpt = new Project('My GPT', 'My GPT is the ultimate virtual sandbox for Web Developers. It is a full-stack React Application built with TypeScript that combines the user-friendly interface of Chat GPT with Open AI\'s virtual sandbox. It streamlines the development process by offering a no-code solution for testing and finetuning model parameters.', 'Technology: React.js, Tailwind CSS, JavaScript, TypeScript, Node.js, Express.js, Google Cloud Platform, CI/CD Pipeline', 'https://my-gpt-393516.uc.r.appspot.com/', 'https://github.com/BrettBuhler/my-gpt', 'https://www.youtube.com/watch?v=YXONKSt7b8g', myGptBackground)
+const projectArray = [flashStudy, myGpt, jobHunt, openingMaster, reactDash, portfolio]
 
 export default projectArray
