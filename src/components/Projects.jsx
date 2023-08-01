@@ -25,7 +25,7 @@ const Projects = ({}) => {
                     <div className="back" style={{background: project.color}}>
                         <h3 className='card-h3'>{project.name}</h3>
                         <p className='card-p'>{project.description}</p>
-                        <p className='card-p'>{project.tech}</p>
+                        <p className='card-p card-p-bottom'>{project.tech}</p>
                         <div className='button-container'>
                             <a href={project.liveLink} target='_blank' className='project-button'>Live Site</a>
                             <a href={project.gitHubLink} target='_blank' className='project-button'>GitHub</a>
